@@ -1,0 +1,176 @@
+/* Import d'une police moderne et ronde */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    /* Fond très clair et doux (gris perle / lavande très pâle) */
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 60%, #eef2ff 100%);
+    color: #334155;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* Grille des patients */
+.grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+/* Carte individuelle épurée et dynamique */
+.carte {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(100, 116, 139, 0.08);
+    border: 1px solid #f1f5f9;
+    border-top: 5px solid #94a3b8;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: apparition 0.5s ease-out backwards;
+}
+
+.carte:nth-child(1) { animation-delay: 0.08s; }
+.carte:nth-child(2) { animation-delay: 0.16s; }
+.carte:nth-child(3) { animation-delay: 0.24s; }
+.carte:nth-child(4) { animation-delay: 0.32s; }
+
+.carte:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(100, 116, 139, 0.14);
+}
+
+.carte h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.carte p {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-top: 8px;
+}
+
+.carte strong {
+    color: #0f172a;
+}
+
+/* Statuts d'urgence avec couleurs pastel douces (Corail, Ambre, Menthe) */
+.statut-Rouge {
+    border-top-color: #f43f5e; /* Corail / Rouge doux */
+    background: linear-gradient(180deg, #fffafa 0%, #ffffff 100%);
+}
+
+.statut-Orange {
+    border-top-color: #f59e0b; /* Ambre / Pêche */
+    background: linear-gradient(180deg, #fffdf7 0%, #ffffff 100%);
+}
+
+.statut-Vert {
+    border-top-color: #10b981; /* Vert menthe */
+    background: linear-gradient(180deg, #f7fdfa 0%, #ffffff 100%);
+}
+
+/* Badges de service */
+.badge {
+    display: inline-block;
+    padding: 5px 13px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    background-color: #e0e7ff;
+    color: #4338ca;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease;
+}
+
+.carte:hover .badge {
+    transform: scale(1.05);
+}
+
+/* Variantes par service (Tons pastel variés : Corail, Lavande, Bleu ciel) */
+.badge-cardio, .cardio {
+    background-color: #ffe4e6;
+    color: #be123c;
+}
+
+.badge-derma, .derma {
+    background-color: #f3e8ff;
+    color: #7e22ce;
+}
+
+.badge-pediatrie, .pediatrie {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+/* Section Récapitulatif */
+.recapitulatif {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(100, 116, 139, 0.08);
+    border: 1px solid #f1f5f9;
+}
+
+.recapitulatif h2 {
+    font-size: 1.4rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.recapitulatif h3 {
+    font-size: 1.05rem;
+    color: #475569;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+.recapitulatif ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.recapitulatif li {
+    padding: 8px 16px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #f43f5e;
+    color: #1e293b;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.recapitulatif li:hover {
+    transform: translateY(-2px);
+    background-color: #f1f5f9;
+}
+
+/* Animation d'apparition fluide */
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
